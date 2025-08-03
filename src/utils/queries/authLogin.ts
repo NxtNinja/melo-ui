@@ -18,8 +18,8 @@ const authLogin = async (lData: LoginSchemaData) => {
       success: true,
       message: "User Login Successful",
     };
-  } catch (error: any) {
-    if (error.name === "HTTPError") {
+  } catch (error) {
+    if (error instanceof HTTPError) {
       const httpError = error as HTTPError;
       const errorJson = await httpError.response.json<any>();
       return {
