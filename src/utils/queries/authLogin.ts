@@ -18,20 +18,11 @@ const authLogin = async (lData: LoginSchemaData) => {
       success: true,
       message: "User Login Successful",
     };
-  } catch (error) {
-    if (error instanceof HTTPError) {
-      const httpError = error as HTTPError;
-      const errorJson = await httpError.response.json<any>();
-      return {
-        success: false,
-        message: errorJson.errors[0].message as string,
-      };
-    } else {
-      return {
-        success: false,
-        message: "Network Error",
-      };
-    }
+  } catch {
+    return {
+      success: false,
+      message: "Login failed. Please check your credentials and try again.",
+    };
   }
 };
 
