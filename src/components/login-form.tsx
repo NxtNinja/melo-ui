@@ -123,7 +123,7 @@ export function LoginForm({
                   {form.formState.isSubmitting ? "Logging in..." : "Login"}
                 </Button>
                 <div className="text-center text-sm">
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <a href="/signup" className="underline underline-offset-4">
                     Sign up
                   </a>
