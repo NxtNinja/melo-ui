@@ -38,3 +38,18 @@ export async function get() {
 
   return cookie;
 }
+
+export async function getRefreshToken() {
+  const cookieStore = await cookies();
+  const rToken = cookieStore.get("refresh_token");
+
+  return rToken?.value;
+}
+
+export async function deleteCookies() {
+  const cookieStore = await cookies();
+
+  // Delete both access and refresh tokens
+  cookieStore.delete("access_token");
+  cookieStore.delete("refresh_token");
+}
