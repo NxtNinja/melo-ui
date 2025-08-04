@@ -16,8 +16,6 @@ const authLogin = async (lData: LoginSchemaData) => {
 
     const data = await response.json<{ data: Cookie }>();
 
-    console.log(data.data);
-
     await create(data.data);
     return {
       success: true,
