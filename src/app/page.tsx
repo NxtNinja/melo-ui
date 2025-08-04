@@ -1,18 +1,8 @@
 import LikeButton from "@/components/shsfui/button/like-button";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { get } from "./actions/authCookie";
 
 export default async function Home() {
-  const cookieStore = await cookies();
-  const token = cookieStore.get("directus_session_token");
-  console.log(token);
-
-  const cookie = token?.value;
-
-  if (cookie === undefined) {
-    return redirect("/login");
-  }
-
+  const cookie = await get();
   return (
     <div className="flex justify-center items-center h-screen">
       <LikeButton />
