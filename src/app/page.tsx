@@ -25,8 +25,9 @@ export default async function Home() {
         </p>
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-md mx-auto">
           <p className="text-green-800 text-sm">
-            🎉 Congratulations! If you're seeing this protected page, it means
-            your account has been successfully created and you're logged in.
+            🎉 Congratulations! If you&apos;re seeing this protected page, it
+            means your account has been successfully created and you&apos;re
+            logged in.
           </p>
         </div>
       </div>
